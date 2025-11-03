@@ -156,15 +156,20 @@ footer {
 }
 
 .participants-list {
-  list-style: disc;
-  margin: 0 0 0 18px;
+  /* hide default bullets; we style entries with flex and a delete icon */
+  list-style: none;
+  margin: 0;
   padding: 0;
   max-height: 120px;
   overflow-y: auto;
 }
 
 .participant-item {
-  padding: 6px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 6px;
   font-size: 14px;
   color: #333;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
@@ -178,4 +183,26 @@ footer {
   font-style: italic;
   color: #666;
   padding: 6px 0;
+}
+
+/* Delete button next to each participant */
+.participant-delete {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.participant-delete:hover {
+  background: rgba(198, 40, 40, 0.08);
+}
+
+.participant-delete:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
